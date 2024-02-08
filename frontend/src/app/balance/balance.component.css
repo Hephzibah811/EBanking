@@ -1,0 +1,19 @@
+h1{
+    text-align:center;
+    color:indigo;
+
+ }
+ .card{
+    
+    margin-left: 35%;
+    margin-top:10%;
+    box-shadow: 5px 5px gray;
+    
+ }
+ .card-body{
+    padding-left: 20%;
+
+ }
+ .top{
+    padding-top: 6%;
+ }
