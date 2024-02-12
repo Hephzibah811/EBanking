@@ -1,0 +1,27 @@
+.time-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .time-table th,
+  .time-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .time-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .time-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .time-table tbody tr:hover {
+    background-color: #f0f0f0;
+  }

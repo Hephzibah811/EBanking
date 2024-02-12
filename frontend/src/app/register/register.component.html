@@ -1,0 +1,129 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h4 class="mb-4 pb-2 pb-md-0 mb-md-5"><b>Create New Account</b></h4>
+                        <form [formGroup]="myForm" id="myForm" name="myForm">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="userId" name = "id" class="form-control form-control-lg" formControlName="userId"/>
+                                        <label class="form-label"  for="userId">User Id</label>
+                                        <div *ngIf="myForm.get('userId')!.touched && myForm.get('userId')!.invalid">
+                                            <div *ngIf="myForm.get('userId')!.hasError('required')">
+                                                <font color="red"><b>User ID is Required.</b></font>
+                                            </div>
+                                        </div>
+                        
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="customerName" name ="name" class="form-control form-control-lg" formControlName="customerName"/>
+                                        <label class="form-label"  for="customerName">Name</label>
+                                        <div *ngIf="myForm.get('customerName')!.touched && myForm.get('customerName')!.invalid">
+                                            <div *ngIf="myForm.get('customerName')!.hasError('required')">
+                                                <font color="red"><b>name is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 ">
+                                    <div class="form-outline">
+                                        <input type="password" id="password" name ="password" class="form-control form-control-lg"formControlName="password" />
+                                        <label class="form-label"  for="password">Password</label>
+                                        <div *ngIf="myForm.get('password')!.touched && myForm.get('password')!.invalid">
+                                            <div *ngIf="myForm.get('password')!.hasError('required')">
+                                                <font color="red"><b>Password is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="emailId" name="email" class="form-control form-control-lg" formControlName="emailId"/>
+                                        <label class="form-label"  for="emailId">Email</label>
+                                        <div *ngIf="myForm.get('emailId')!.touched && myForm.get('emailId')!.invalid">
+                                            <div *ngIf="myForm.get('emailId')!.hasError('required')">
+                                                <font color="red"><b>Email Id is Required.</b></font>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input type="tel" id="mobile" name="contact" class="form-control form-control-lg"formControlName="mobile" />
+                                        <label class="form-label"  for="mobile">Phone Number</label>
+                                        <div *ngIf="myForm.get('mobile')!.touched && myForm.get('mobile')!.invalid">
+                                            <div *ngIf="myForm.get('mobile')!.hasError('required')">
+                                                <font color="red"><b>Mobile number is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="aadharNo" name="aadhar" class="form-control form-control-lg" formControlName="aadharNo" />
+                                        <label class="form-label"  for="aadharNo"> Aadhar Number</label>
+                                        <div *ngIf="myForm.get('aadharNo')!.touched && myForm.get('aadharNo')!.invalid">
+                                            <div *ngIf="myForm.get('aadharNo')!.hasError('required')">
+                                                <font color="red"><b>Aadhar number is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <select class="select form-control-lg" formControlName="role" >
+                                        <option value="1">Choose option</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+
+                                    </select>
+                                    <label class="form-label select-label">Choose option</label>
+                                    <div *ngIf="myForm.get('role')!.touched && myForm.get('role')!.invalid">
+                                        <div *ngIf="myForm.get('role')!.hasError('required')">
+                                            <font color="red"><b>Choose option is Required.</b></font>
+                                        </div>
+                                    </div> 
+
+
+                                </div>
+                            </div>
+                        </form>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary " type="submit"  (click)="insertRegister(myForm.value)"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#"  class="btn btn-primary" routerLink="/home">Back</a> 
+                            </div>
+
+                            {{result}}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

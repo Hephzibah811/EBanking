@@ -1,0 +1,80 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h4 class="mb-4 pb-2 pb-md-0 mb-md-5"><b>Add Account Details</b></h4>
+                        <form [formGroup]="myForm" id="myForm" name="myForm">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="user_id" class="form-control form-control-lg" formControlName="user_id"/>
+                                        <label class="form-label"  for="user_id">User Id</label>
+                                        <div *ngIf="myForm.get('user_id')!.touched && myForm.get('user_id')!.invalid">
+                                            <div *ngIf="myForm.get('user_id')!.hasError('required')">
+                                                <font color="red"><b>User Id is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="number" id="balance" class="form-control form-control-lg" formControlName="balance"/>
+                                        <label class="form-label"  for="balance">Balance</label>
+                                        <div *ngIf="myForm.get('balance')!.touched && myForm.get('balance')!.invalid">
+                                            <div *ngIf="myForm.get('balance')!.hasError('required')">
+                                                <font color="red"><b>Balance is Required.</b></font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                           
+                          
+
+                           
+
+                               
+                               
+
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <select class="select form-control-lg" formControlName="account_type" >
+                                        <option value="1">Choose option</option>
+                                        <option value="saving">Saving Account</option>
+                                        <option value="current">Current Account</option>
+
+                                    </select>
+                                    &nbsp;
+                                    <label class="form-label select-label">Account type</label>
+                                    <div *ngIf="myForm.get('account_type')!.touched && myForm.get('account_type')!.invalid">
+                                        <div *ngIf="myForm.get('account_type')!.hasError('required')">
+                                            <font color="red"><b>Account type is Required.</b></font>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary " type="submit" value="Submit" (click)="insertAccount(myForm.value)"/>&nbsp;&nbsp;&nbsp;
+                                <a href="#"  class="btn btn-primary" routerLink="/home">Back</a> 
+                            </div>
+
+                            {{result}}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
